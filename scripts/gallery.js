@@ -27,7 +27,10 @@ const display3dGallery = (data) => {
         //Populating the elements of the gallery
 
         div.classList.add("img-container");
-        div.addEventListener('click', abrirPopup);
+        div.addEventListener('click', function() {
+
+            abrirPopup(imageData);
+        });
         
 
         img.classList.add("img-fit");
@@ -58,7 +61,10 @@ function display2dGallery(data) {
         //Populating the elements of the gallery
 
         div.classList.add("img-container");
-        div.addEventListener('click', abrirPopup);
+        div.addEventListener('click', function() {
+
+            abrirPopup(imageData);
+        });
 
         img.classList.add("img-fit");
         img.src = imageData;
@@ -76,60 +82,116 @@ function display2dGallery(data) {
 
 var indicePopup = 0;
 
+/*cerrar popup*/
 const cerrarDiv = document.querySelector("#cerrar-popup");
+const spanCerrar = document.querySelector(".cerrar");
+
 cerrarDiv.addEventListener("click", function cerrarPopup () {
 
     document.querySelector("#popup").style.display = "none";
 });
 
-const spanCerrar = document.querySelector(".cerrar");
 spanCerrar.addEventListener("click", function cerrarPopup () {
 
     document.querySelector("#popup").style.display = "none";
 });
 
+/* Slideshow buttons */
+
 const leftButton = document.querySelector(".l-b-popup");
+const rightButton = document.querySelector(".r-b-popup");
+
+rightButton.addEventListener("click", goRight);
 leftButton.addEventListener("click", goLeft);
 
-const rightButton = document.querySelector(".r-b-popup");
-rightButton.addEventListener("click", goRight);
+/**/
 
-function abrirPopup(i) {
+function abrirPopup (imageData) {
 
-    
     document.querySelector("#popup").style.display = "block";
-    document.querySelector(".popup-img").src = imageData[i];
+    document.querySelector(".popup-img").src = imageData;
+}
+
+/**/
+
+
+async function goRight() {
+
+    let response = await fetch(url);
+    let data = await response.json();
+    
+    let dataBlender = data.gallery.blender;
+    let dataDraws = data.gallery.draws;
+    let imgSrc = document.querySelector(".popup-img").getAttribute("src");
+    
+    let indexBlender = dataBlender.indexOf(imgSrc);
+    let indexDraws = dataDraws.indexOf(imgSrc);
+    
+    if (indexBlender != -1) {
+
+        indexBlender += 1;
+
+        if (indexBlender <= 0) {
+            indexBlender = dataBlender.length + 1;
+        } else if (indexBlender >= dataBlender.length) {
+            indexBlender = 0;
+        }
+
+        //console.log(`Blender index at the END ${indexBlender}`);
+        document.querySelector(".popup-img").src = dataBlender[indexBlender];
+        
+    } else if (indexDraws != -1) {
+
+        indexDraws += 1;
+        console.log(`BEFORE the change ${indexDraws}`);
+
+        if (indexDraws <= 0) {
+            indexDraws = dataDraws.length + 1;
+        } else if (indexDraws >= dataDraws.length) {
+            indexDraws = 0;
+        }
+        
+        //console.log(`Draws index at the END ${indexDraws}`);
+        document.querySelector(".popup-img").src = dataDraws[indexDraws];
+    }
+    
 }
 
 async function goLeft() {
 
     let response = await fetch(url);
     let data = await response.json();
-    let dataBlender = data.gallery.blender;
     
-    indicePopup += -1;
-    if (indicePopup < 0) {
-        indicePopup = dataBlender.length - 1;
-    } else if (indicePopup >= dataBlender.length) {
-        indicePopup = 0;
-    }
-    document.querySelector(".popup-img").src = dataBlender[indicePopup];
-}
-
-async function goRight() {
-
-    let response = await fetch(url);
-    let data = await response.json();
     let dataBlender = data.gallery.blender;
-    console.log(dataBlender);
+    let dataDraws = data.gallery.draws;
+    let imgSrc = document.querySelector(".popup-img").getAttribute("src");
     
-    indicePopup += 1;
-    if (indicePopup < 0) {
-        indicePopup = dataBlender.length + 1;
-    } else if (indicePopup >= dataBlender.length) {
-        indicePopup = 0;
+    let indexBlender = dataBlender.indexOf(imgSrc);
+    let indexDraws = dataDraws.indexOf(imgSrc);
+    
+    if (indexBlender != -1) {
+        indexBlender -= 1;
+
+        if (indexBlender < 0) {
+            indexBlender = dataBlender.length - 1;
+        } else if (indexBlender >= dataBlender.length) {
+            indexBlender = 0;
+        }
+
+        //console.log(`Blender index at the END ${indexBlender}`);
+        document.querySelector(".popup-img").src = dataBlender[indexBlender];
+
+    } else if (indexDraws != -1) {
+
+        indexDraws -= 1;
+        if (indexDraws < 0) {
+            indexDraws = dataDraws.length - 1;
+        } else if (indexDraws >= dataDraws.length) {
+            indexDraws = 0;
+        }
+        //console.log(`Draws index at the END ${indexDraws}`);
+        document.querySelector(".popup-img").src = dataDraws[indexDraws];
     }
-    document.querySelector(".popup-img").src = dataBlender[indicePopup];
 }
 
 
