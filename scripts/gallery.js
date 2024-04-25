@@ -10,7 +10,7 @@ async function getGallery() {
 
 const displayGallery = (data) => {
 
-    console.table(data);
+    console.log(data.gallery);
 }
 
 getGallery();
