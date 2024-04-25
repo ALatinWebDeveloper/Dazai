@@ -41,6 +41,16 @@ var imagenes = [                                                   //placeholder
     '/img/Gallery/I2.1.webp',
 ];
 
+const redButton = document.querySelector("#red-button");
+
+redButton.addEventListener("click", onoff);
+
+const rbutton = document.querySelector("#rbutton");
+const lbutton = document.querySelector("#lbutton");
+
+rbutton.addEventListener("click", siguiente);
+lbutton.addEventListener("click", anterior);
+
 var indiceActual = 0;
 var imagenElement = document.getElementById('Gallery-change');
 var imagenContainer = document.getElementById('Gallery-back');
@@ -95,7 +105,8 @@ function anterior() {
 }
 
 function onoff(){
-    if (imagenContainer.style.display === "none") {
+    console.log("on");
+    if (imagenContainer.style.display == "none") {
         imagenContainer.style.display = "block";
         imagenElement.setAttribute("src", "https://i.makeagif.com/media/2-27-2016/hB9gYm.gif"); //placeholder
         setTimeout(function() {
@@ -118,9 +129,10 @@ var scrollPosition = 0;
 
 window.addEventListener('scroll', function() {
     scrollPosition = window.scrollY;
+    
 
     // Verificar si la posición del scroll es mayor que 1800
-    if (scrollPosition > 3400) {
+    if (scrollPosition > 4500) {
         oc.setAttribute("class","mini-oc");
         imagenContainer.style.display = "none";
         remote.setAttribute("class","b-left Opacity-animation");
@@ -132,31 +144,6 @@ window.addEventListener('scroll', function() {
         oldgallerymov.setAttribute("class","old-gallery-mov-down");
     }
 });
-
-//test Popup
-
-
-var indicePopup = 0;
-
-/*export function abrirPopup(indice) {
-    indicePopup = indice;
-    document.querySelector("#popup").style.display = "block";
-    document.querySelector(".popup-img").src = imagenes[indice];
-}
-
-export function cerrarPopup() {
-    document.querySelector("#popup").style.display = "none";console.log("#popup");
-}
-
-export function cambiarImagen(direccion) {
-    indicePopup += direccion;
-    if (indicePopup < 0) {
-        indicePopup = imagenes.length - 1;
-    } else if (indicePopup >= imagenes.length) {
-        indicePopup = 0;
-    }
-    document.querySelector(".popup-img").src = imagenes[indicePopup];
-}*/
 
 //test nav change scroll
 var navbar = document.getElementById("nav-bar");

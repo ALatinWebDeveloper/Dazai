@@ -1,8 +1,6 @@
 const url = "https://ALatinWebDeveloper.github.io/Dazai/data/gallery.json";
-
 const blenderGallery = document.querySelectorAll(".Gallery-container")[0];
 const drawsGallery = document.querySelectorAll(".Gallery-container")[1];
-
 
 async function getGallery() {
 
@@ -104,6 +102,8 @@ const rightButton = document.querySelector(".r-b-popup");
 rightButton.addEventListener("click", goRight);
 leftButton.addEventListener("click", goLeft);
 
+
+
 /**/
 
 function abrirPopup (imageData) {
@@ -116,7 +116,7 @@ function abrirPopup (imageData) {
 
 
 async function goRight() {
-
+    
     let response = await fetch(url);
     let data = await response.json();
     

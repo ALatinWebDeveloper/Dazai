@@ -47,8 +47,8 @@ header{
     scale: 0.5;
     transition: 0.7s !important;
     background-color: whitesmoke;
-    height: 100px;
-    width: 100px;
+    height: 8rem;
+    width: 8rem;
     margin-top: 7px;
     margin-right: 1vw;
     border-radius: 100%;
@@ -67,17 +67,16 @@ header{
 .logo-chill{
     transition: 0.7s;
     background-color: whitesmoke;
-    height: 100px;
-    width: 100px;
-    margin-top: 50px;
-    margin-right: 1vw;
+    height: 4rem;
+    width: 4rem;
     border-radius: 100%;
-    box-shadow: 10px whitesmoke;
 }
+
 header{
     position: sticky;
     top: 1px;
     z-index: 5;
+    padding: 1rem;
 }
 
 
@@ -255,7 +254,7 @@ h1{
     border: solid rgba(0, 0, 0, 0.24) 2px;
     box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.664);
     position: relative;
-    right: 60rem;
+    right: 78vw;
     top: 39rem;
     opacity: 1;
     transition: 1s !important;
@@ -357,8 +356,7 @@ h1{
 
 #buttons{
     position: relative;
-    right: 8rem;
-    top: 2rem;
+    top: 5rem;
     display: flex;
     justify-content: space-around;
 }
@@ -419,6 +417,7 @@ h1{
     );
   }
 .button-82-front-red {  /*red button*/
+    cursor: pointer;
     display: block;
     position: relative;
     padding: 70px 70px;
@@ -461,7 +460,6 @@ h1{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  left: 60%;
   top: 15%;
   
 }
