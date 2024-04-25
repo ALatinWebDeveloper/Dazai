@@ -1,4 +1,4 @@
-url = "https://github.com/ALatinWebDeveloper/Dazai/data/galery.json";
+const url = "https://github.com/ALatinWebDeveloper/Dazai/data/galery.json";
 
 async function getGallery() {
 
