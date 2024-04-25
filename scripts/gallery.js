@@ -34,6 +34,7 @@ const display3dGallery = (data) => {
         img.classList.add("img-fit");
         img.src = imageData;
         img.alt = `Gallery image ${i}`;
+        img.loading = `lazy`;
 
         //Assembling the 3D gallery
 
