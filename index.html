@@ -5,10 +5,11 @@
     <meta name="author" content="Leonardo Cadenas / Dazai">
     <meta name="description" content="Portfolio, Front-end, Web developer, web desing, blender, digital art" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon_io/site.webmanifest">
+    <link rel="manifest" href="img/favicon_io/site.webmanifest">-->
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -389,12 +390,12 @@
             
         <div id="popup" class="popup">
             <div id="flex-popup">
-                <div id="cerrar-popup" onclick="cerrarPopup()"></div>
-                <span class="cerrar" onclick="cerrarPopup()">&times;</span>
+                <div id="cerrar-popup"></div>
+                <span class="cerrar">&times;</span>
                 <div id="container-img-popup">
                     <img class="popup-img img-fit" src="" alt="Gallery image">
-                    <button class="l-b-popup" onclick="cambiarImagen(-1)">➤</button>
-                    <button class="r-b-popup" onclick="cambiarImagen(1)">➤</button>
+                    <button class="l-b-popup">➤</button>
+                    <button class="r-b-popup">➤</button>
                 </div>
             </div>
         </div>
@@ -402,8 +403,8 @@
         </div>
     </div>
 
-    <script src="scripts/gallery.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/script.js" type="module"></script>
+    <script src="scripts/gallery.js" type="module"></script>
 
 </body>
 </html>

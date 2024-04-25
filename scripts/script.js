@@ -138,17 +138,17 @@ window.addEventListener('scroll', function() {
 
 var indicePopup = 0;
 
-function abrirPopup(indice) {
+/*export function abrirPopup(indice) {
     indicePopup = indice;
     document.querySelector("#popup").style.display = "block";
     document.querySelector(".popup-img").src = imagenes[indice];
 }
 
-function cerrarPopup() {
-    document.querySelector("#popup").style.display = "none";
+export function cerrarPopup() {
+    document.querySelector("#popup").style.display = "none";console.log("#popup");
 }
 
-function cambiarImagen(direccion) {
+export function cambiarImagen(direccion) {
     indicePopup += direccion;
     if (indicePopup < 0) {
         indicePopup = imagenes.length - 1;
@@ -156,7 +156,7 @@ function cambiarImagen(direccion) {
         indicePopup = 0;
     }
     document.querySelector(".popup-img").src = imagenes[indicePopup];
-}
+}*/
 
 //test nav change scroll
 var navbar = document.getElementById("nav-bar");
