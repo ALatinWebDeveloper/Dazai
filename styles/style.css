@@ -47,46 +47,49 @@ header{
     scale: 0.5;
     transition: 0.7s !important;
     background-color: whitesmoke;
-    height: 8rem;
-    width: 8rem;
-    margin-top: 7px;
+    height: 5rem;
+    width: 5rem;
     margin-right: 1vw;
     border-radius: 100%;
     box-shadow: 10px whitesmoke;
 }
 .nav-bar-bkg{
-    padding-left: 17.5%;
+    height: 2vw;
     transition: 0.7s !important;
     background: rgba(255, 255, 255, 0.06);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(50px);
     border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 1vw 0;
 }
 
 .logo-chill{
     transition: 0.7s;
     background-color: whitesmoke;
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 100%;
+    margin-right: 3rem;
 }
 
 header{
     position: sticky;
     top: 1px;
     z-index: 5;
-    padding: 1rem;
 }
 
 
 header > div > a{
-    margin-left: 5.5vw;
     padding-bottom: 10px;
 }
+
 .header-item{
     transition: 0.2s;
+    padding: 1.1rem 4%;
+    display: inline-block;
 }
+
 .hed:hover > :not(:hover) {
     transition: 0.2s;
     transform: scale(1.2);
@@ -99,6 +102,8 @@ header > div > a{
 
 .lumina{
     text-shadow: 0px 0px 7px whitesmoke;
+    width: 90%;
+    margin: 0 auto;
 }
 
 #myname{
@@ -115,8 +120,7 @@ h1{
 
 #spc{
     background-color: aliceblue;
-    height: 2px;
-    width: 99vw;
+    height: 2px;    
     box-shadow: 0px 0px 10px whitesmoke;
 }
 #Gallery{
@@ -707,9 +711,12 @@ h1{
 
 }
 #contact-container{
-    display: flex;
+    display: grid;
     justify-content: space-between;
-    margin: 1%;
+    grid-gap: 1vw 3vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 5% auto;
+    width: 90%;
 }
 .picgit{
     margin-top: -4rem;
@@ -717,8 +724,7 @@ h1{
     background-size: contain;
     position: relative;
     border-radius: 100%;
-    height: 250px;
-    width: 250px;
+    height: 7rem;
 }
 .lkdpic{
     background-image: url(/img/lkdprofilepic.webp);
@@ -739,8 +745,7 @@ h1{
 .gitpic{
     position: relative;
     border-radius: 100%;
-    height: 250px;
-    width: 250px;
+    height: 7rem;
     opacity: 0;
 }
 .gitpic:hover{
@@ -752,20 +757,7 @@ h1{
     transition: 0.5s;
 }
 #githubprofile{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    width: 23rem;
-    padding: 1rem;
-    margin-bottom: 0rem;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(50px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    
 }
 
 
@@ -810,21 +802,7 @@ svg{
 }
 
 #linkd{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1rem !important;
-    width: 15rem;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(50px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    
 }
 
 #linkd-button{
@@ -858,3 +836,22 @@ svg{
 }
  /* --------------------------------------- Contact me  end ------------------------------- */
  
+
+ /*Mis agregados*/
+
+ .contactCard {
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1rem !important;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(50px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+ }

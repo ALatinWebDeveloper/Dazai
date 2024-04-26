@@ -105,7 +105,7 @@ function anterior() {
 }
 
 function onoff(){
-    console.log("on");
+    //console.log("on");
     if (imagenContainer.style.display == "none") {
         imagenContainer.style.display = "block";
         imagenElement.setAttribute("src", "https://i.makeagif.com/media/2-27-2016/hB9gYm.gif"); //placeholder
@@ -149,7 +149,7 @@ window.addEventListener('scroll', function() {
 var navbar = document.getElementById("nav-bar");
 var navlogo = document.getElementById("logo-placeholder");
 
-var cvlogo = document.getElementById("cv-logo");
+
 
 
 
@@ -159,12 +159,12 @@ window.addEventListener('scroll', function() {
     if (scrollPosition > 1173) {
         navbar.setAttribute("class","nav-bar-bkg");
         navlogo.setAttribute("class","logo-mov");
-        cvlogo.setAttribute("class","lumina cv-none");
+        
     }
     else {
         navbar.setAttribute("class","");
         navlogo.setAttribute("class","logo-chill");
-        cvlogo.setAttribute("class","lumina");
+        
     }
 });
 
